@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<h1 style="color:brown;">Tính diện tích hình chữ nhật</h1>
+<body>
+<br> Nhập độ dài cạnh chiều dài <input type="number" id="chieudai" placeholder="đơn vị cm" > </br>
+<br> Nhập độ dài cạnh chiều rộng <input type="number" id="chieurong" placeholder="đơn vị cm" > </br>
+<br>
+<button style="width:130px; height:30px" onclick="tinhdientich()"> Tính diện tích </button>
+<p id="dientich"> Diện tích hình vuông: </p>
+
+</body>
+<script>
+    function tinhdientich() {
+        let chieudai = +document.getElementById("chieudai").value
+        let chieurong = +document.getElementById("chieurong").value
+        let dientich = chieudai*chieurong;
+        if (chieudai<=0 || chieurong<=0){
+            document.getElementById("dientich").innerHTML = "Chiều dài và chiều rộng của hình chữ nhật không thể nhỏ hơn hoặc bằng 0" ;
+        }
+        if (chieurong > chieudai ){
+            document.getElementById("dientich").innerHTML = "Chiều dài phải lớn hơn chiều rộng" ;
+        }
+        else {
+            document.getElementById("dientich").innerHTML = "Diện tích hình chữ nhật có chiều dài " + chieudai + " và chiều rộng " +chieurong+  " là: " + dientich ;
+        }
+    }
+</script>
+</html>
